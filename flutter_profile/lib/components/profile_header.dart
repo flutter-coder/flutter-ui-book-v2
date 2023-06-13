@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ProfileHeader extends StatelessWidget {
+  const ProfileHeader({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
       // 1
       children: [
-        const SizedBox(width: 20),
+        SizedBox(width: 20),
         _buildHeaderAvatar(),
-        const SizedBox(width: 20),
+        SizedBox(width: 20),
         _buildHeaderProfile(),
       ],
     );
   }
 
   Widget _buildHeaderAvatar() {
-    return const SizedBox(
+    return SizedBox(
       width: 100,
       height: 100,
       child: CircleAvatar(
@@ -25,7 +27,7 @@ class ProfileHeader extends StatelessWidget {
   }
 
   Widget _buildHeaderProfile() {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(

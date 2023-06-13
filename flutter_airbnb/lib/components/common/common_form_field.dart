@@ -6,7 +6,7 @@ class CommonFormField extends StatelessWidget {
   final hintText;
 
   // 1. required 키워드는 선택적 매개변수 {} 안에서 꼭 받아야 하는 값을 설정할 수 있습니다.
-  const CommonFormField({required this.prefixText, required this.hintText});
+  const CommonFormField({Key? key, required this.prefixText, required this.hintText}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +16,14 @@ class CommonFormField extends StatelessWidget {
           textAlignVertical: TextAlignVertical.bottom, // 2. TextFormField 내부 세로 정렬
           decoration: InputDecoration(
             // 3. TextFormField 내부에 패딩을 줄 수 있습니다.
-            contentPadding: const EdgeInsets.only(top: 30, left: 20, bottom: 10),
+            contentPadding: EdgeInsets.only(top: 30, left: 20, bottom: 10),
             hintText: hintText,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(
+              borderSide: BorderSide(
                 color: Colors.black,
                 width: 2,
               ),

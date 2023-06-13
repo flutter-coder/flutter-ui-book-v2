@@ -4,6 +4,8 @@ import 'package:flutter_login/components/logo.dart';
 import 'package:flutter_login/size.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +13,9 @@ class LoginPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            const SizedBox(height: xlarge_gap),
-            const Logo("Login"),
-            const SizedBox(height: large_gap), // 1. 추가
+            SizedBox(height: xlargeGap),
+            Logo("Login"),
+            SizedBox(height: largeGap), // 1. 추가
             CustomForm(), // 2. 추가
           ],
         ),

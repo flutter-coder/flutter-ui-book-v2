@@ -3,10 +3,12 @@ import 'package:flutter_login/pages/home_page.dart';
 import 'package:flutter_login/pages/login_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,11 +17,11 @@ class MyApp extends StatelessWidget {
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             backgroundColor: Colors.black,
-            primary: Colors.white,
+            foregroundColor: Colors.white, // 텍스트 색상을 지정하는 속성
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30),
             ),
-            minimumSize: const Size(400, 60),
+            minimumSize: Size(400, 60),
           ),
         ),
       ),

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shoppingcart/constants.dart';
 
 class ShoppingCartDetail extends StatelessWidget {
+  const ShoppingCartDetail({Key? key}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,8 +29,8 @@ class ShoppingCartDetail extends StatelessWidget {
   }
 
   Widget _buildDetailNameAndPrice() {
-    return const Padding(
-      padding: EdgeInsets.only(bottom: 10),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
       child: Row(
         // 1. spaceBetween 이 적용되면 양 끝으로 벌어진다.
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,8 +55,8 @@ class ShoppingCartDetail extends StatelessWidget {
   }
 
   Widget _buildDetailRatingAndReviewCount() {
-    return const Padding(
-      padding: EdgeInsets.only(bottom: 20),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
       child: Row(
         children: [
           Icon(Icons.star, color: Colors.yellow),
@@ -76,8 +79,8 @@ class ShoppingCartDetail extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("Color Options"),
-          const SizedBox(height: 10),
+          Text("Color Options"),
+          SizedBox(height: 10),
           Row(
             children: [
               // 3. 동일한 색상 아이콘을 재사용하기 위해 함수로 관리
@@ -134,13 +137,14 @@ class ShoppingCartDetail extends StatelessWidget {
             // 1. 추가
             context: context,
             builder: (context) => CupertinoAlertDialog(
-              title: const Text("장바구니에 담으시겠습니까?"),
+              title: Text("장바구니에 담으시겠습니까?"),
               actions: [
                 CupertinoDialogAction(
-                  child: const Text("확인"),
                   onPressed: () {
                     Navigator.pop(context);
                   },
+                  child: Text("확인", style: TextStyle(color: Colors.blue),
+                  ),
                 ),
               ],
             ),
@@ -148,12 +152,12 @@ class ShoppingCartDetail extends StatelessWidget {
         },
         style: TextButton.styleFrom(
           backgroundColor: kAccentColor,
-          minimumSize: const Size(300, 50),
+          minimumSize: Size(300, 50),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
         ),
-        child: const Text(
+        child: Text(
           "Add to Cart",
           style: TextStyle(color: Colors.white),
         ),

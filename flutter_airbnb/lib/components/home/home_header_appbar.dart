@@ -3,6 +3,8 @@ import 'package:flutter_airbnb/size.dart';
 import 'package:flutter_airbnb/styles.dart';
 
 class HomeHeaderAppBar extends StatelessWidget {
+  const HomeHeaderAppBar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,7 +12,7 @@ class HomeHeaderAppBar extends StatelessWidget {
       child: Row(
         children: [
           _buildAppBarLogo(),
-          const Spacer(),
+          Spacer(),
           _buildAppBarMenu(),
         ],
       ),
@@ -26,7 +28,7 @@ class HomeHeaderAppBar extends StatelessWidget {
           height: 30,
           color: Colors.redAccent,
         ),
-        const SizedBox(width: gap_s),
+        SizedBox(width: gap_s),
         Text("RoomOfAll", style: h5(mColor: Colors.white)),
       ],
     );
@@ -37,7 +39,7 @@ class HomeHeaderAppBar extends StatelessWidget {
       children: [
         // 1. 클릭을 이벤트를 원하면 InkWell 이나 TextButton 위젯을 사용하면 됩니다.
         Text("회원가입", style: subtitle1(mColor: Colors.white)),
-        const SizedBox(width: gap_m),
+        SizedBox(width: gap_m),
         Text("로그인", style: subtitle1(mColor: Colors.white)),
       ],
     );

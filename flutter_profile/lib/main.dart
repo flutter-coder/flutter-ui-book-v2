@@ -7,10 +7,12 @@ import 'package:flutter_profile/components/profile_tab.dart';
 import 'package:flutter_profile/theme.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,6 +23,8 @@ class MyApp extends StatelessWidget {
 }
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,11 +32,11 @@ class ProfilePage extends StatelessWidget {
       appBar: _buildProfileAppBar(),
       body: Column(
         children: [
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           ProfileHeader(),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           ProfileCountInfo(),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           ProfileButtons(),
           Expanded(child: ProfileTab()),
         ],
@@ -42,8 +46,8 @@ class ProfilePage extends StatelessWidget {
 
   AppBar _buildProfileAppBar() {
     return AppBar(
-      leading: const Icon(Icons.arrow_back_ios),
-      title: const Text("Profile"),
+      leading: Icon(Icons.arrow_back_ios),
+      title: Text("Profile"),
       centerTitle: true,
     );
   }

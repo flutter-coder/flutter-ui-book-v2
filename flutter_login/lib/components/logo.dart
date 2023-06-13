@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class Logo extends StatelessWidget {
   final String title;
 
-  const Logo(this.title);
+  const Logo(this.title, {Key? key}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Logo extends StatelessWidget {
         ),
         Text(
           title,
-          style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
         ),
       ],
     );

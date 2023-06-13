@@ -4,7 +4,7 @@ import 'package:flutter_login/size.dart';
 class CustomTextFormField extends StatelessWidget {
   final String text;
 
-  const CustomTextFormField(this.text);
+  const CustomTextFormField(this.text, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(text),
-        const SizedBox(height: small_gap),
+        SizedBox(height: smallGap),
         TextFormField(
           validator: (value) => value!.isEmpty
               ? "Please enter some text"

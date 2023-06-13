@@ -4,10 +4,12 @@ import 'package:flutter_shoppingcart/components/shoppingcart_header.dart';
 import 'package:flutter_shoppingcart/theme.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,6 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 class ShoppingCartPage extends StatelessWidget {
+  const ShoppingCartPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,15 +38,15 @@ class ShoppingCartPage extends StatelessWidget {
   AppBar _buildShoppingCartAppBar() {
     return AppBar(
       leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
+        icon: Icon(Icons.arrow_back),
         onPressed: () {},
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.shopping_cart),
+          icon: Icon(Icons.shopping_cart),
           onPressed: () {},
         ),
-        const SizedBox(width: 16),
+        SizedBox(width: 16),
       ],
       elevation: 0.0,
     );

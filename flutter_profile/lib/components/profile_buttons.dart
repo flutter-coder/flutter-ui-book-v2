@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ProfileButtons extends StatelessWidget {
+  const ProfileButtons({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -21,7 +23,7 @@ class ProfileButtons extends StatelessWidget {
         alignment: Alignment.center,
         width: 150,
         height: 45,
-        child: const Text(
+        child: Text(
           "Follow",
           style: TextStyle(color: Colors.white),
         ),
@@ -42,7 +44,7 @@ class ProfileButtons extends StatelessWidget {
         alignment: Alignment.center,
         width: 150,
         height: 45,
-        child: const Text(
+        child: Text(
           "Message",
           style: TextStyle(color: Colors.black),
         ),

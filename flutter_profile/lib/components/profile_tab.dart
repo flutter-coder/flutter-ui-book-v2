@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ProfileTab extends StatefulWidget {
+  const ProfileTab({Key? key}) : super(key: key);
+
   @override
-  _ProfileTabState createState() => _ProfileTabState();
+  State<ProfileTab> createState() => _ProfileTabState();
 }
 
-class _ProfileTabState extends State<ProfileTab>
-    with SingleTickerProviderStateMixin {
-  TabController? _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = new TabController(length: 2, vsync: this);
-  }
-
+class _ProfileTabState extends State<ProfileTab> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,18 +18,26 @@ class _ProfileTabState extends State<ProfileTab>
     );
   }
 
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(length: 2, vsync: this);
+  }
+
   Widget _buildTabBar() {
     return TabBar(
       controller: _tabController,
-      tabs: const [
+      tabs: [
         Tab(
             icon: Icon(
-          Icons.directions_car,
-        )),
+              Icons.directions_car,
+            )),
         Tab(
             icon: Icon(
-          Icons.directions_transit,
-        )),
+              Icons.directions_transit,
+            )),
       ],
     );
   }
@@ -46,7 +47,7 @@ class _ProfileTabState extends State<ProfileTab>
       controller: _tabController,
       children: [
         GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisSpacing: 10,
             crossAxisCount: 3,
             mainAxisSpacing: 10,

@@ -3,6 +3,8 @@ import 'package:flutter_airbnb/size.dart';
 import 'package:flutter_airbnb/styles.dart';
 
 class HomeBodyBanner extends StatelessWidget {
+  const HomeBodyBanner({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +42,7 @@ class HomeBodyBanner extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               // 5. 글자 범위 최대 제약 조건 주기
               maxWidth: 250,
             ),
@@ -49,9 +51,9 @@ class HomeBodyBanner extends StatelessWidget {
               style: h4(mColor: Colors.white),
             ),
           ),
-          const SizedBox(height: gap_m),
+          SizedBox(height: gap_m),
           Container(
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 250,
             ),
             child: Text(
@@ -59,7 +61,7 @@ class HomeBodyBanner extends StatelessWidget {
               style: subtitle1(mColor: Colors.white),
             ),
           ),
-          const SizedBox(height: gap_m),
+          SizedBox(height: gap_m),
           SizedBox(
             height: 35,
             width: 170,

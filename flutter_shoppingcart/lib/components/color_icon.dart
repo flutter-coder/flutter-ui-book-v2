@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColorIcon extends StatelessWidget {
   final Color mColor;
 
-  const ColorIcon(this.mColor);
+  const ColorIcon(this.mColor, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

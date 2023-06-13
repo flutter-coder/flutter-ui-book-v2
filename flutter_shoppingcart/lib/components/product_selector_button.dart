@@ -7,7 +7,7 @@ class ProductSelectorButton extends StatelessWidget {
   final IconData mIcon;
   final Function changeIcon;
 
-  const ProductSelectorButton(this.id, this.selectedIconNum, this.mIcon, this.changeIcon);
+  const ProductSelectorButton({Key? key, required this.id, required this.selectedIconNum, required this.mIcon, required this.changeIcon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

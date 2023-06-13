@@ -4,6 +4,9 @@ import 'package:flutter_login/size.dart';
 
 class CustomForm extends StatelessWidget {
   final _formKey = GlobalKey<FormState>(); // 1. 글로벌 key
+
+  CustomForm({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -11,19 +14,19 @@ class CustomForm extends StatelessWidget {
       key: _formKey,
       child: Column(
         children: [
-          const CustomTextFormField("Email"),
-          const SizedBox(height: medium_gap),
-          const CustomTextFormField("Password"),
-          const SizedBox(height: large_gap),
+          CustomTextFormField("Email"),
+          SizedBox(height: mediumGap),
+          CustomTextFormField("Password"),
+          SizedBox(height: largeGap),
           // 3. TextButton 추가
           TextButton(
             onPressed: () {
-              // 3. 유효성 검사
+              // 4. 유효성 검사
               if (_formKey.currentState!.validate()) {
                 Navigator.pushNamed(context, "/home");
               }
             },
-            child: const Text("Login"),
+            child: Text("Login"),
           ),
         ],
       ),
